@@ -8,7 +8,6 @@ public class SinglePlayerMovement : MonoBehaviour {
     public GameObject CharcterAnimation;
     public GameObject Weapon;
     public float SpawnX, SpawnY;
-    public Camera FollowCam;
     float zPos;
 
 	// Use this for initialization
@@ -27,16 +26,16 @@ public class SinglePlayerMovement : MonoBehaviour {
         if (Input.GetKey(KeyCode.D)) 
         {
             transform.Translate(speed * Time.deltaTime, 0, 0);
-            FollowCam.transform.Translate(speed * Time.deltaTime, 0, 0);
+           
         }
         if (Input.GetKey(KeyCode.A))
         {
             transform.Translate(-speed * Time.deltaTime, 0, 0);
-            FollowCam.transform.Translate(-speed * Time.deltaTime, 0, 0);  
+           
         }
         if (Input.GetKey(KeyCode.W))
         {
-            if (zPos >= 4.2f)
+            if (zPos >= 12f)
             {
                  transform.Translate(0, 0, 0);
             }
@@ -57,8 +56,5 @@ public class SinglePlayerMovement : MonoBehaviour {
             }
         }
 	}
-    public void FollowPlayer(float PlayerX, float PlayerY)
-    {
-        FollowCam.transform.Translate(speed,0,0);
-    }
+   
 }
