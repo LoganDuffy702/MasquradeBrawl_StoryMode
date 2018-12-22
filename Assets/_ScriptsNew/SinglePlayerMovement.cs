@@ -8,6 +8,7 @@ public class SinglePlayerMovement : MonoBehaviour {
     public GameObject CharcterAnimation;
     public GameObject Weapon;
     public float SpawnX, SpawnY;
+    public bool runspeed;
     float zPos;
 
 	// Use this for initialization
@@ -18,23 +19,24 @@ public class SinglePlayerMovement : MonoBehaviour {
     {
         gameObject.transform.position = new Vector3(SpawnX, SpawnY, 0);
     }
-	// Update is called once per frame
-	void FixedUpdate ()
+    // Update is called once per frame
+    void FixedUpdate()
     {
         zPos = gameObject.transform.position.z;
-        
+
         if (Input.GetKey(KeyCode.D)) 
-        {
+        { 
             transform.Translate(speed * Time.deltaTime, 0, 0);
-           
         }
         if (Input.GetKey(KeyCode.A))
         {
+            runspeed = Input.GetKey(KeyCode.A);
             transform.Translate(-speed * Time.deltaTime, 0, 0);
-           
+
         }
         if (Input.GetKey(KeyCode.W))
         {
+            runspeed = Input.GetKey(KeyCode.W);
             if (zPos >= 12f)
             {
                  transform.Translate(0, 0, 0);
@@ -46,6 +48,7 @@ public class SinglePlayerMovement : MonoBehaviour {
         }
         if (Input.GetKey(KeyCode.S))
         {
+            runspeed = Input.GetKey(KeyCode.S);
             if (zPos <= -.5f)
             {
                 transform.Translate(0, 0, 0);
@@ -55,6 +58,16 @@ public class SinglePlayerMovement : MonoBehaviour {
                 transform.Translate(0, 0, -(speed / 2) * Time.deltaTime);
             }
         }
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
+        {
+            CharcterAnimation.GetComponent<Animator>().SetBool("Run", true);
+        }
+        else
+        {
+            CharcterAnimation.GetComponent<Animator>().SetBool("Run", false);
+        }
+       
+       
 	}
    
 }

@@ -19,6 +19,9 @@ public class FollowCam : MonoBehaviour {
         Player_pos.z = transform.position.z;
         Player_pos.y = Player_pos.y + Yoffset;
         //work in progress.
-        transform.position = Vector3.Lerp(transform.position,Player_pos,TravelSpeed);
-	}
+        //transform.position = Vector3.Lerp(transform.position,Player_pos,TravelSpeed);
+
+        Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, Player_pos, 0.03f);
+        //Camera.main.transform.LookAt(transform);
+    }
 }
