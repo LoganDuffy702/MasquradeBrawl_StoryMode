@@ -6,12 +6,14 @@ public class BasicEnemyMovement : MonoBehaviour {
 
     public float distance;
     public float speed;
-    public bool updown, leftright, forwardback, attackplayer;
+    public bool updown, leftright, forwardback, attackPlayer,followPlayer;
     public GameObject Player;
-    public Vector3 starting;
     private Vector3 smoothVelocity = Vector3.zero;
+    public float ClosestDistance;
+    public float chaserange;
     public float smoothTime = 10.0f;
-    public Vector3 ending;
+    float Proxy;
+   
 	// Update is called once per frame
 	void Update () {
         if (updown == true)
@@ -28,12 +30,32 @@ public class BasicEnemyMovement : MonoBehaviour {
             transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.PingPong(Time.time * speed, distance));
         }
 
-        if (attackplayer == true)
+        if (followPlayer == true)
         {
            // transform.position = Vector3.Lerp(transform.position, Player.transform.position, Time.deltaTime*speed);
             //transform.position = new Vector3(Mathf.Lerp(transform.position.x, Player.transform.position.x, Time.deltaTime * speed),0,0);
             transform.position = Vector3.SmoothDamp(transform.position,Player.transform.position, ref smoothVelocity, smoothTime);
-            transform.LookAt(Player.transform.position);
+           
         }
+        Proxy = Vector3.Distance(Player.transform.position, transform.position);
+       
+        if (Proxy <= chaserange)
+        {
+            if (Proxy <= ClosestDistance)
+            {
+                followPlayer = false;
+                transform.LookAt(Player.transform.position);
+            }
+            else
+            {
+                followPlayer = true;
+                transform.LookAt(Player.transform.position);
+            } 
+        }
+        else
+        {
+            followPlayer = false;
+        }
+        
     }
 }

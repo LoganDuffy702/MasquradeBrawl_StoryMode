@@ -15,6 +15,7 @@ public class WeaponScript : MonoBehaviour {
     bool showText = false;
     public GameObject TypeOfBullet;
     public int ShotGunBullets = 4;
+    public GameObject blastflair;
 
     public bool ShotGunMode = true;
 
@@ -97,9 +98,12 @@ public class WeaponScript : MonoBehaviour {
             if (ShotGunMode == false)
             {
                 var bullet = Instantiate(TypeOfBullet);//Basic firing of bullet
+                var flair = Instantiate(blastflair);
+                flair.transform.position = Firepoint.transform.position;
+                flair.transform.rotation = transform.rotation;
                 bullet.transform.position = Firepoint.transform.position;
                 bullet.transform.rotation = transform.rotation;
-                bullet.transform.Rotate(0, 0, Random.Range(-3, 3));
+                bullet.transform.Rotate(0, 0, Random.Range(-1,1));
             }
             else if (ShotGunMode == true)
             {
