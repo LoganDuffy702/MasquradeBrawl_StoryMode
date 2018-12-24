@@ -37,9 +37,10 @@ public class SinglePlayerMovement : MonoBehaviour {
         if (Input.GetKey(KeyCode.W))
         {
             runspeed = Input.GetKey(KeyCode.W);
-            if (zPos >= 12f)
+            if (zPos > 12f)
             {
-                 transform.Translate(0, 0, 0);
+                transform.position = new Vector3(transform.position.x, transform.position.y, 12f);
+                transform.Translate(0, 0, 0);
             }
             else
             {
@@ -51,6 +52,7 @@ public class SinglePlayerMovement : MonoBehaviour {
             runspeed = Input.GetKey(KeyCode.S);
             if (zPos <= -.5f)
             {
+                transform.position = new Vector3(transform.position.x, transform.position.y, -.2f);
                 transform.Translate(0, 0, 0);
             }
             else
@@ -66,8 +68,11 @@ public class SinglePlayerMovement : MonoBehaviour {
         {
             CharcterAnimation.GetComponent<Animator>().SetBool("Run", false);
         }
-       
-       
-	}
+
+        if (zPos <= -.5f)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, -.2f);
+        }
+    }
    
 }
