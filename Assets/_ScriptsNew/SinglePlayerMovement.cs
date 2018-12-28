@@ -7,59 +7,74 @@ public class SinglePlayerMovement : MonoBehaviour {
     public int speed;
     public GameObject CharcterAnimation;
     public GameObject Weapon;
+    List<float> Zpositions = new List<float>() { 1.2f, 6f, 10f} ;
     public float SpawnX, SpawnY;
+    public float slidespeed;
+    int currentNum = 0;
     public bool runspeed;
-    float zPos;
+
+    bool front, middle, back;
+    bool Move = true;
 
 	// Use this for initialization
 	void Start () {
-		
+        transform.position = new Vector3(transform.position.x, transform.position.y, Zpositions[0]);
 	}
+
     public void Recreate()
     {
         gameObject.transform.position = new Vector3(SpawnX, SpawnY, 0);
     }
-    // Update is called once per frame
+
+    public IEnumerator ChangeLaneUp()
+    {
+        yield return new WaitForSeconds(.2f);
+        
+        if (currentNum < 2)
+        {
+            currentNum += 1;
+        }
+        //transform.position = new Vector3(transform.position.x, transform.position.y, Zpositions[currentNum].transform.position.z);
+        
+        Move = true;
+    }
+    public IEnumerator ChangeLaneDown()
+    {
+        yield return new WaitForSeconds(.2f);
+
+        if (currentNum > 0)
+        {
+            currentNum = currentNum - 1;
+        }
+        //transform.position = new Vector3(transform.position.x, transform.position.y, Zpositions[currentNum]);
+        
+        
+        Move = true;
+    }
+
     void FixedUpdate()
     {
-        zPos = gameObject.transform.position.z;
-
         if (Input.GetKey(KeyCode.D)) 
         { 
             transform.Translate(speed * Time.deltaTime, 0, 0);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            runspeed = Input.GetKey(KeyCode.A);
             transform.Translate(-speed * Time.deltaTime, 0, 0);
+        }
 
-        }
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) && Move == true)
         {
-            runspeed = Input.GetKey(KeyCode.W);
-            if (zPos > 12f)
-            {
-                transform.position = new Vector3(transform.position.x, transform.position.y, 12f);
-                transform.Translate(0, 0, 0);
-            }
-            else
-            {
-                transform.Translate(0, 0, (speed / 2) * Time.deltaTime);
-            }    
+            Move = false;
+            StartCoroutine(ChangeLaneUp());
+            
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S) && Move == true)
         {
-            runspeed = Input.GetKey(KeyCode.S);
-            if (zPos <= -.5f)
-            {
-                transform.position = new Vector3(transform.position.x, transform.position.y, -.2f);
-                transform.Translate(0, 0, 0);
-            }
-            else
-            {
-                transform.Translate(0, 0, -(speed / 2) * Time.deltaTime);
-            }
+            Move = false;
+            StartCoroutine(ChangeLaneDown());
         }
+
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
         {
             CharcterAnimation.GetComponent<Animator>().SetBool("Run", true);
@@ -68,11 +83,8 @@ public class SinglePlayerMovement : MonoBehaviour {
         {
             CharcterAnimation.GetComponent<Animator>().SetBool("Run", false);
         }
-
-        if (zPos <= -.5f)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y, -.2f);
-        }
+        transform.position = Vector3.Lerp(transform.position,
+            new Vector3(transform.position.x,transform.position.y,Zpositions[currentNum]), Time.deltaTime * slidespeed);
     }
    
 }

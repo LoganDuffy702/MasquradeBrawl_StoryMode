@@ -8,14 +8,20 @@ public class BasicEnemyMovement : MonoBehaviour {
     public float speed;
     public bool updown, leftright, forwardback, attackPlayer,followPlayer;
     public GameObject Player;
+
     private Vector3 smoothVelocity = Vector3.zero;
+    public GameObject typeofBullet,firepoint;
+    public float attacktime;
     public float ClosestDistance;
     public float chaserange;
-    public float smoothTime = 10.0f;
     float Proxy;
-   
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    private void Start()
+    {
+        StartCoroutine(Fire());
+    }
+    void Update () {
         if (updown == true)
         {
             transform.position = new Vector3(transform.position.x, Mathf.PingPong(Time.time * 10, distance), transform.position.z);
@@ -32,10 +38,7 @@ public class BasicEnemyMovement : MonoBehaviour {
 
         if (followPlayer == true)
         {
-           // transform.position = Vector3.Lerp(transform.position, Player.transform.position, Time.deltaTime*speed);
-            //transform.position = new Vector3(Mathf.Lerp(transform.position.x, Player.transform.position.x, Time.deltaTime * speed),0,0);
-            transform.position = Vector3.SmoothDamp(transform.position,Player.transform.position, ref smoothVelocity, smoothTime);
-           
+            transform.position = Vector3.MoveTowards(transform.position,Player.transform.position,Time.deltaTime*speed);    
         }
         Proxy = Vector3.Distance(Player.transform.position, transform.position);
        
@@ -45,17 +48,34 @@ public class BasicEnemyMovement : MonoBehaviour {
             {
                 followPlayer = false;
                 transform.LookAt(Player.transform.position);
+                attackPlayer = false;
             }
             else
             {
                 followPlayer = true;
                 transform.LookAt(Player.transform.position);
+                attackPlayer = true;      
             } 
         }
         else
         {
             followPlayer = false;
         }
-        
+
+      
+
+    }
+    public IEnumerator Fire()
+    {
+        yield return new WaitForSeconds(attacktime);
+        //if (attackPlayer == true)
+        //{
+           
+        //}
+        var bullet = Instantiate(typeofBullet);
+        bullet.transform.position = firepoint.transform.position;
+        bullet.transform.rotation = firepoint.transform.rotation;
+        StartCoroutine(Fire());
+
     }
 }
