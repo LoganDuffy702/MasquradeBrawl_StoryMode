@@ -406,15 +406,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1978747311812764}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0.62}
-  m_LocalScale: {x: 0.3673815, y: 0.37330514, z: 0.83862865}
+  m_LocalScale: {x: 0.72616726, y: 0.37330514, z: 0.3324766}
   m_Children:
   - {fileID: 4497112068767284}
   - {fileID: 4147712465609818}
   m_Father: {fileID: 4570104258581290}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &4250531276397710
 Transform:
   m_ObjectHideFlags: 1
@@ -558,7 +558,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1767539386870620}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.04, y: 6.9031897, z: 14.411571}
+  m_LocalPosition: {x: -0.04, y: 6.9031897, z: 12.63}
   m_LocalScale: {x: 3.2698057, y: 1.8602626, z: 1.8602626}
   m_Children: []
   m_Father: {fileID: 4171860860936710}
@@ -947,7 +947,7 @@ Light:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1137822680815472}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
@@ -1019,7 +1019,7 @@ Light:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1510626238122576}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
@@ -1072,19 +1072,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 7
-  speed: 5
+  speed: 7.58
   updown: 0
   leftright: 0
   forwardback: 0
-  attackPlayer: 1
+  attackPlayer: 0
   followPlayer: 1
   Player: {fileID: 0}
   typeofBullet: {fileID: 1314150209560560, guid: 90192e96c54423446bc0129e04b8c45f,
     type: 2}
   firepoint: {fileID: 1629227108238250}
-  attacktime: 0
-  ClosestDistance: 3
-  chaserange: 12
+  attacktime: 0.72
+  ClosestDistance: 4
+  chaserange: 15
 --- !u!136 &136255015094321534
 CapsuleCollider:
   m_ObjectHideFlags: 1
