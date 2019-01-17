@@ -7,7 +7,7 @@ public class SinglePlayerMovement : MonoBehaviour {
     public int speed;
     public GameObject CharcterAnimation;
     public GameObject Weapon;
-    List<float> Zpositions = new List<float>() { 1.2f, 6f, 10f} ;
+    List<float> Zpositions = new List<float>() { 1.2f, 6f} ;
     public float SpawnX, SpawnY;
     public float slidespeed;
     int currentNum = 0;
@@ -30,7 +30,7 @@ public class SinglePlayerMovement : MonoBehaviour {
     {
         yield return new WaitForSeconds(.2f);
         
-        if (currentNum < 2)
+        if (currentNum < 1)
         {
             currentNum += 1;
         }

@@ -8,6 +8,7 @@ public class BasicEnemyMovement : MonoBehaviour {
     public float speed;
     public bool updown, leftright, forwardback, attackPlayer,followPlayer;
     public GameObject Player;
+    public GameObject MainCamera;
 
     private Vector3 smoothVelocity = Vector3.zero;
     public GameObject typeofBullet,firepoint;
@@ -47,13 +48,13 @@ public class BasicEnemyMovement : MonoBehaviour {
             if (Proxy <= ClosestDistance)
             {
                 followPlayer = false;
-                transform.LookAt(Player.transform.position);
+                //transform.LookAt(MainCamera.transform.position);
                 attackPlayer = false;
             }
             else
             {
                 followPlayer = true;
-                transform.LookAt(Player.transform.position);
+                //transform.LookAt(MainCamera.transform.position);
                 attackPlayer = true;      
             } 
         }
