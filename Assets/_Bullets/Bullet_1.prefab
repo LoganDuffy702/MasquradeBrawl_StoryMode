@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85002d5ab957f654f96759ef3be9551b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 67
+  MoveSpeed: 55
   DestroyFade: 1
   TimedDeath: 0
   OnContact: {fileID: 1557011999327734, guid: af1820c107067ec4aaa662e6ea51f1df, type: 2}
