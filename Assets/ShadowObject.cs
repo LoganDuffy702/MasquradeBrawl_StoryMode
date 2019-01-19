@@ -37,11 +37,11 @@ public class ShadowObject : MonoBehaviour {
         }
         if (w == 0)
         {
-            ObjectsCollider.enabled = true;
+            ObjectsCollider.enabled = false;
         }
         else if (w == 1)
         {
-            ObjectsCollider.enabled = false;
+            ObjectsCollider.enabled = true;
         }
         yield return new WaitForSeconds(.2f);
         count = true;

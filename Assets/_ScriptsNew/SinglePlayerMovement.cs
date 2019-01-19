@@ -18,39 +18,39 @@ public class SinglePlayerMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        transform.position = new Vector3(transform.position.x, transform.position.y, Zpositions[0]);
+        gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, 1.2f);
 	}
 
-    public void Recreate()
-    {
-        gameObject.transform.position = new Vector3(SpawnX, SpawnY, 0);
-    }
+    //public void Recreate()
+    //{
+    //    gameObject.transform.position = new Vector3(SpawnX, SpawnY, 0);
+    //}
 
-    public IEnumerator ChangeLaneUp()
-    {
-        yield return new WaitForSeconds(.2f);
+    //public IEnumerator ChangeLaneUp()
+    //{
+    //    yield return new WaitForSeconds(.2f);
         
-        if (currentNum < 1)
-        {
-            currentNum += 1;
-        }
-        //transform.position = new Vector3(transform.position.x, transform.position.y, Zpositions[currentNum].transform.position.z);
+    //    if (currentNum < 1)
+    //    {
+    //        currentNum += 1;
+    //    }
+    //    //transform.position = new Vector3(transform.position.x, transform.position.y, Zpositions[currentNum].transform.position.z);
         
-        Move = true;
-    }
-    public IEnumerator ChangeLaneDown()
-    {
-        yield return new WaitForSeconds(.2f);
+    //    Move = true;
+    //}
+    //public IEnumerator ChangeLaneDown()
+    //{
+    //    yield return new WaitForSeconds(.2f);
 
-        if (currentNum > 0)
-        {
-            currentNum = currentNum - 1;
-        }
-        //transform.position = new Vector3(transform.position.x, transform.position.y, Zpositions[currentNum]);
+    //    if (currentNum > 0)
+    //    {
+    //        currentNum = currentNum - 1;
+    //    }
+    //    //transform.position = new Vector3(transform.position.x, transform.position.y, Zpositions[currentNum]);
         
         
-        Move = true;
-    }
+    //    Move = true;
+    //}
 
     void FixedUpdate()
     {
@@ -63,19 +63,19 @@ public class SinglePlayerMovement : MonoBehaviour {
             transform.Translate(-speed * Time.deltaTime, 0, 0);
         }
 
-        if (Input.GetKey(KeyCode.W) && Move == true)
-        {
-            Move = false;
-            StartCoroutine(ChangeLaneUp());
+        //if (Input.GetKey(KeyCode.W) && Move == true)
+        //{
+        //    Move = false;
+        //    StartCoroutine(ChangeLaneUp());
             
-        }
-        if (Input.GetKey(KeyCode.S) && Move == true)
-        {
-            Move = false;
-            StartCoroutine(ChangeLaneDown());
-        }
+        //}
+        //if (Input.GetKey(KeyCode.S) && Move == true)
+        //{
+        //    Move = false;
+        //    StartCoroutine(ChangeLaneDown());
+        //}
 
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
             CharcterAnimation.GetComponent<Animator>().SetBool("Run", true);
         }
@@ -83,8 +83,8 @@ public class SinglePlayerMovement : MonoBehaviour {
         {
             CharcterAnimation.GetComponent<Animator>().SetBool("Run", false);
         }
-        transform.position = Vector3.Lerp(transform.position,
-            new Vector3(transform.position.x,transform.position.y,Zpositions[currentNum]), Time.deltaTime * slidespeed);
+        //transform.position = Vector3.Lerp(transform.position,
+        //    new Vector3(transform.position.x,transform.position.y,Zpositions[currentNum]), Time.deltaTime * slidespeed);
     }
    
 }

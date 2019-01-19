@@ -11,16 +11,17 @@ public class ShadowWalk : MonoBehaviour
     public GameObject ShellWeapon;
     public Vector3 SavedLocation;
     SpriteMask mask;
+    public int Change = 0;
     public bool freeze = false;
     public bool CanLeave = false;
     bool Shadowmode = true;
-    
+
 
     // Use this for initialization
     void Start()
     {
         mask = SpriteMask.GetComponent<SpriteMask>();
-        
+
         //PlayerShell.transform.position = new Vector3(1f, 0f, 5f);
         ShellSprite.GetComponent<SpriteRenderer>().enabled = false;
         ShellWeapon.GetComponent<SpriteRenderer>().enabled = false;
@@ -28,7 +29,7 @@ public class ShadowWalk : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (freeze == true)
         {
@@ -38,22 +39,31 @@ public class ShadowWalk : MonoBehaviour
         {
             PlayerShell.transform.position = gameObject.transform.position;
         }
-            
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            CanLeave = true;
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            CanLeave = false;
-        }
+            Change += 1;
+            if (Change > 1)
+            {
+                Change = 0;
+            }
+            if (Change == 1)
+            {
+                CanLeave = true;
+            }
+            else if (Change == 0)
+            {
+                CanLeave = false;
+            }
 
+
+        }
+       
         if (CanLeave == true && Shadowmode == false)
         {
             SavedLocation = gameObject.transform.position;
             freeze = true;
-            
+            gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, 6f);
             ShellSprite.GetComponent<SpriteRenderer>().enabled = true;
             ShellWeapon.GetComponent<SpriteRenderer>().enabled = true;
             mask.enabled = true;
@@ -63,6 +73,7 @@ public class ShadowWalk : MonoBehaviour
         else if (CanLeave == false && Shadowmode == true)
         {
             freeze = false;
+            gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, 1.2f);
             ShellSprite.GetComponent<SpriteRenderer>().enabled = false;
             ShellWeapon.GetComponent<SpriteRenderer>().enabled = false;
 
