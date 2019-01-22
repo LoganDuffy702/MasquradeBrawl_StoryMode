@@ -9,12 +9,12 @@ public class ShadowWalk : MonoBehaviour
     public GameObject SpriteMask;
     public GameObject ShellSprite;
     public GameObject ShellWeapon;
-    public Vector3 SavedLocation;
+    Vector3 SavedLocation;
     SpriteMask mask;
-    public int Change = 0;
-    public bool freeze = false;
-    public bool CanLeave = false;
-    bool Shadowmode = true;
+    private int Change = 0;
+    private bool freeze = false;
+    private bool CanLeave = false;
+    private bool Shadowmode = true;
 
 
     // Use this for initialization
