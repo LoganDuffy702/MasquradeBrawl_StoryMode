@@ -27,7 +27,7 @@ public class JumpMechanic : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Floor"))
+        if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("Wall1"))
         {
             canjump = true;
         }

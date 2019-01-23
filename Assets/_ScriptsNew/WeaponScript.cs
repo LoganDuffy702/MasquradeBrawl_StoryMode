@@ -98,9 +98,9 @@ public class WeaponScript : MonoBehaviour {
             if (ShotGunMode == false)
             {
                 var bullet = Instantiate(TypeOfBullet);//Basic firing of bullet
-                var flair = Instantiate(blastflair);
-                flair.transform.position = Firepoint.transform.position;
-                flair.transform.rotation = transform.rotation;
+                //var flair = Instantiate(blastflair);
+                //flair.transform.position = Firepoint.transform.position;
+                //flair.transform.rotation = transform.rotation;
                 bullet.transform.position = Firepoint.transform.position;
                 bullet.transform.rotation = transform.rotation;
                 bullet.transform.Rotate(0, 0, Random.Range(-1,1));

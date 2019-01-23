@@ -1071,20 +1071,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afda1d0fccb49904b86e51771a8ff81a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 7
   speed: 7.58
-  updown: 0
-  leftright: 0
-  forwardback: 0
-  attackPlayer: 0
-  followPlayer: 1
-  Player: {fileID: 0}
-  typeofBullet: {fileID: 1314150209560560, guid: 90192e96c54423446bc0129e04b8c45f,
-    type: 2}
-  firepoint: {fileID: 1629227108238250}
-  attacktime: 0.72
-  ClosestDistance: 4
-  chaserange: 15
+  LR: 0
+  grounded: 0
+  fallspeed: 0
+  Raylenght: 0
+  hoverheight: 0
+  rotationspeed: 0
 --- !u!136 &136255015094321534
 CapsuleCollider:
   m_ObjectHideFlags: 1

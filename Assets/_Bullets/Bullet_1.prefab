@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 55
-  DestroyFade: 1
+  DestroyFade: 0.2
   TimedDeath: 0
   OnContact: {fileID: 1557011999327734, guid: af1820c107067ec4aaa662e6ea51f1df, type: 2}
 --- !u!135 &135250301004385716

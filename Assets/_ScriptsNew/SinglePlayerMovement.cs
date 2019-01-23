@@ -63,16 +63,14 @@ public class SinglePlayerMovement : MonoBehaviour {
             transform.Translate(-speed * Time.deltaTime, 0, 0);
         }
 
-        //if (Input.GetKey(KeyCode.W) && Move == true)
+        //if (Input.GetKey(KeyCode.W))
         //{
-        //    Move = false;
-        //    StartCoroutine(ChangeLaneUp());
-            
+        //    transform.Translate(0, 0, speed * Time.deltaTime);
+
         //}
-        //if (Input.GetKey(KeyCode.S) && Move == true)
+        //if (Input.GetKey(KeyCode.S))
         //{
-        //    Move = false;
-        //    StartCoroutine(ChangeLaneDown());
+        //    transform.Translate(0, 0, -speed * Time.deltaTime);
         //}
 
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))

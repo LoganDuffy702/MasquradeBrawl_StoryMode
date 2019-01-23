@@ -14,12 +14,13 @@ public class DamageCalculator : MonoBehaviour {
         }
         
     }
-    public void FixedUpdate()
+    public void Update()
     {
         if (Knockback == true)
         {
-            gameObject.GetComponent<Rigidbody>().AddForce(Vector3.left * 50);
+            gameObject.GetComponent<Rigidbody>().velocity = Vector3.left * 20f;
             Knockback = false;
         }
+        
     }
 }

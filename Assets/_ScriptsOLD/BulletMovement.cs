@@ -20,7 +20,13 @@ public class BulletMovement : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Floor") || collision.gameObject.CompareTag("DefaultBullet")
-            || collision.gameObject.CompareTag("Player"))
+            || collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Enemy1")
+            || collision.gameObject.CompareTag("Wall1"))
+        {
+            Instantiate(OnContact, transform.localPosition, transform.localRotation);
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.layer == 9)
         {
             Instantiate(OnContact, transform.localPosition, transform.localRotation);
             Destroy(gameObject);
