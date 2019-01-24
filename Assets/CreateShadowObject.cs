@@ -7,12 +7,15 @@ public class CreateShadowObject : MonoBehaviour {
     public bool box, sphere;
     public bool CustomBox;
     public Vector3 CustomBoxSize = new Vector3(1f,1f,1f);
+    public PhysicMaterial mat;
     public Vector3 CustomBoxCenter;
+    int Change = 0;
 	// Use this for initialization
 	void Start () {
         if (box)
         {
             BoxCollider BC = gameObject.AddComponent<BoxCollider>() as BoxCollider;
+            BC.material = mat;
             if (CustomBox == true)
             {
                 BC.size = CustomBoxSize;
@@ -20,7 +23,7 @@ public class CreateShadowObject : MonoBehaviour {
             }
             else
             {
-                BC.center = new Vector3(0f, 0f, 6f);
+                BC.center = new Vector3(0f, 0f, 4f);
             }
             
             if (Hidden == true)
@@ -43,5 +46,25 @@ public class CreateShadowObject : MonoBehaviour {
         }
       
 	}
-	
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Change += 1;
+            if (Change > 1)
+            {
+                Change = 0;
+            }
+            if (Change == 1)
+            {
+                gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x, gameObject.transform.localPosition.y, 4f);
+            }
+            else if (Change == 0)
+            {
+                gameObject.transform.localPosition = new Vector3(gameObject.transform.localPosition.x, gameObject.transform.localPosition.y, 0f);
+            }
+        }
+        
+    }
+
 }

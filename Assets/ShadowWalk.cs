@@ -22,7 +22,7 @@ public class ShadowWalk : MonoBehaviour
     {
         mask = SpriteMask.GetComponent<SpriteMask>();
 
-        //PlayerShell.transform.position = new Vector3(1f, 0f, 5f);
+        
         ShellSprite.GetComponent<SpriteRenderer>().enabled = false;
         ShellWeapon.GetComponent<SpriteRenderer>().enabled = false;
         mask.enabled = false;
@@ -63,17 +63,18 @@ public class ShadowWalk : MonoBehaviour
         {
             SavedLocation = gameObject.transform.position;
             freeze = true;
-            gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, 6f);
+            gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
             ShellSprite.GetComponent<SpriteRenderer>().enabled = true;
             ShellWeapon.GetComponent<SpriteRenderer>().enabled = true;
             mask.enabled = true;
             Shadowmode = true;
+            
 
         }
         else if (CanLeave == false && Shadowmode == true)
         {
             freeze = false;
-            gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, 1.2f);
+            gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
             ShellSprite.GetComponent<SpriteRenderer>().enabled = false;
             ShellWeapon.GetComponent<SpriteRenderer>().enabled = false;
 
