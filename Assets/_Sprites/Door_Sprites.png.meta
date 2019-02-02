@@ -5,6 +5,22 @@ TextureImporter:
     21300000: Door_Sprites_0
     21300002: Door_Sprites_1
     21300004: Door_Sprites_2
+    21300006: Door_Sprites_3
+    21300008: Door_Sprites_4
+    21300010: Door_Sprites_5
+    21300012: Door_Sprites_6
+    21300014: Door_Sprites_7
+    21300016: Door_Sprites_8
+    21300018: Door_Sprites_9
+    21300020: Door_Sprites_10
+    21300022: Door_Sprites_11
+    21300024: Door_Sprites_12
+    21300026: Door_Sprites_13
+    21300028: Door_Sprites_14
+    21300030: Door_Sprites_15
+    21300032: Door_Sprites_17
+    21300034: Door_Sprites_18
+    21300036: Door_Sprites_16
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -48,7 +64,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -90,18 +106,18 @@ TextureImporter:
       name: Door_Sprites_0
       rect:
         serializedVersion: 2
-        x: 57
-        y: 325
-        width: 12
-        height: 92
+        x: 31
+        y: 389
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9cccddc908199548b981be880fe8278
+      spriteID: d0b1c664695f3174db2d278d00f77484
       vertices: []
       indices: 
       edges: []
@@ -110,18 +126,18 @@ TextureImporter:
       name: Door_Sprites_1
       rect:
         serializedVersion: 2
-        x: 146
-        y: 325
-        width: 46
-        height: 92
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+        x: 63
+        y: 389
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 981429746a5ae6c40bb92b4eadaff40d
+      spriteID: 02714fa9726bd9b42b3a97e3115c537e
       vertices: []
       indices: 
       edges: []
@@ -130,18 +146,338 @@ TextureImporter:
       name: Door_Sprites_2
       rect:
         serializedVersion: 2
-        x: 269
-        y: 325
-        width: 46
-        height: 92
-      alignment: 5
-      pivot: {x: 1, y: 0.5}
+        x: 137
+        y: 389
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06c2d6f8d0460ec4680a8f7ea3574f7b
+      spriteID: 182f7f906abff104baa61f8869ce4395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door_Sprites_3
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 389
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c4ca1907be93274791d87dc4b9805b9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door_Sprites_4
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 389
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ff55a1caa81b19459adc3135c46dfa3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door_Sprites_5
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 389
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa848d4de696e3e4892090a079826217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door_Sprites_6
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 357
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1e588805c4de6047a9f045b65cde41e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door_Sprites_7
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 357
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d0e4912ea7e0ec41804f4f51f083f5a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door_Sprites_8
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 357
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63aa642819887d446a2c3ef8377cdba1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door_Sprites_9
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 357
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acced10f238509a4f889fb2fc7b82806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door_Sprites_10
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 357
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e2bd86155866a549ade27f55623d617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door_Sprites_11
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 357
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d684f4bc34762314d883a36200711e4b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door_Sprites_12
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 325
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d9e07c544df478418255e578b009e2d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door_Sprites_13
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 325
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce7ff78d672d0784d9541148f09d574b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door_Sprites_14
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 325
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38f2e5dfac24a5640aadd021d08f1233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door_Sprites_15
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 325
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1cfe5f2647d2374bacb7ed7e94c6c72
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door_Sprites_17
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 325
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 670e73506e019dd49ad712685be91844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door_Sprites_18
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 325
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 763f8d0c2ae165c42950364d2a37e382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door_Sprites_16
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 325
+        width: 68
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4f4ca2d4c3fc4042818fb1833754edd
       vertices: []
       indices: 
       edges: []
