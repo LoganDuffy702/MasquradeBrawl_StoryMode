@@ -176,7 +176,8 @@ MonoBehaviour:
   MoveSpeed: 55
   DestroyFade: 0.2
   TimedDeath: 0
-  OnContact: {fileID: 1003223778714572, guid: b82e3d777e9692f41a42222b5b12729f, type: 3}
+  OnContact: {fileID: 4433171693172472036, guid: 3e63c696efbcda445b5e9ccad7fbaf39,
+    type: 3}
 --- !u!54 &54464146010055154
 Rigidbody:
   m_ObjectHideFlags: 0
